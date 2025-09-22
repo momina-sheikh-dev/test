@@ -24,18 +24,20 @@
 <body>
   <div id="instruction">Point your camera at the HIRO marker</div>
 
-  <!-- AR Scene -->
+  <!-- AR Scene with poetry image -->
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
+    <a-assets>
+      <img id="poetry" src="chai.png">
+    </a-assets>
+
     <a-marker preset="hiro">
-      <a-text 
-        value="چائے دو رائے نہیں"
-        color="maroon"
-        width="4"
-        align="center"
+      <a-plane 
+        src="#poetry"
         position="0 0 0"
         rotation="-90 0 0"
-        font="https://cdn.aframe.io/fonts/DejaVu-sdf.fnt">
-      </a-text>
+        width="3"
+        height="1.5">
+      </a-plane>
     </a-marker>
 
     <a-entity camera></a-entity>
